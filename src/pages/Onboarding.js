@@ -3,9 +3,10 @@ import { StyleSheet, View, Text, Image } from "react-native";
 import Logo from "../assets/icons/Logo";
 import Button from "../components/Button";
 
-const Onboarding = () => {
+const Onboarding = ({ navigation }) => {
   const onLogin = () => {
     console.log("on navigate to login press");
+    navigation.navigate("SignIn");
   };
   return (
     <View>

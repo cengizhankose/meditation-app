@@ -4,9 +4,10 @@ import Logo from "../../assets/icons/Logo";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
-const Onboarding = () => {
+const SignIn = ({ navigation }) => {
   const onLogin = () => {
     console.log("on login press");
+    navigation.navigate("SignUp");
   };
   return (
     <View>
@@ -32,7 +33,7 @@ const Onboarding = () => {
   );
 };
 
-export default Onboarding;
+export default SignIn;
 
 const styles = StyleSheet.create({
   bgImage: {
