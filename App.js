@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
 import { initializeApp } from "firebase/app";
 import AppLoading from "expo-app-loading";
 
@@ -16,15 +16,7 @@ import {
   Alegreya_800ExtraBold,
   Alegreya_900Black,
 } from "@expo-google-fonts/alegreya";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  SafeAreaView,
-  StatusBar,
-} from "react-native";
-import { initializeApp } from "firebase/app";
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -93,20 +85,19 @@ export default function App() {
     return (
       <>
         <NavigationContainer ref={navigation}>
-      <Tab.Navigator
-        screenOptions={{ headerShown: false }}
-        tabBar={(props) => <MyTabBar {...props} />}
-      >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Sounds" component={ProfileScreen} />
-        <Tab.Screen name="Profile" component={SoundsScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+          <Tab.Navigator
+            screenOptions={{ headerShown: false }}
+            tabBar={(props) => <MyTabBar {...props} />}
+          >
+            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Sounds" component={ProfileScreen} />
+            <Tab.Screen name="Profile" component={SoundsScreen} />
+          </Tab.Navigator>
+        </NavigationContainer>
       </>
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
