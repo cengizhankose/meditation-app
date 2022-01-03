@@ -1,6 +1,21 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 import { initializeApp } from "firebase/app";
+import AppLoading from "expo-app-loading";
+
+//Screens
+import OnboardingScreen from "./src/pages/Onboarding";
+import SignInScreen from "./src/pages/Auth/SignIn";
+import SignUpScreen from "./src/pages/Auth/SignUp";
+
+import {
+  useFonts,
+  Alegreya_400Regular,
+  Alegreya_500Medium,
+  Alegreya_600SemiBold,
+  Alegreya_700Bold,
+  Alegreya_800ExtraBold,
+  Alegreya_900Black,
+} from "@expo-google-fonts/alegreya";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCgkag3WWCA_S4X8iF-ZNgjhVKZv-cDK1M",
@@ -13,20 +28,28 @@ const firebaseConfig = {
 };
 
 export default function App() {
-  const app = initializeApp(firebaseConfig);
-  return (
-    <View style={styles.container}>
-      <Text>Meditation App</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  let [fontsLoaded] = useFonts({
+    Alegreya_400Regular,
+    Alegreya_500Medium,
+    Alegreya_600SemiBold,
+    Alegreya_700Bold,
+    Alegreya_800ExtraBold,
+    Alegreya_900Black,
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+  const app = initializeApp(firebaseConfig);
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <>
+        {/* App Component Goes Here */}
+        <SignUpScreen />
+        {/* App Component Goes Here */}
+
+        <StatusBar style="hidden" />
+      </>
+    );
+  }
+}
