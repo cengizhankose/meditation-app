@@ -22,7 +22,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MyTabBar from "./src/components/CustomTabBar";
 import { useNavigationContainerRef } from "@react-navigation/native";
-import HomeScreen from "./src/components/HomeScreen";
+import HomeScreen from "./src/pages/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

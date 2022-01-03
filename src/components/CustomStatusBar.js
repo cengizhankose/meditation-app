@@ -6,7 +6,7 @@ const CustomStatusBar = () => {
     <View style={styles.container}>
       <Image source={require("../../assets/Hamburger.png")} />
       <Image
-        style={{ marginLeft: 10 }}
+        style={{ marginLeft: 10, width: 45, height: 50 }}
         source={require("../../assets/Home.png")}
       />
       <View style={styles.profileImageContainer}>
@@ -21,8 +21,7 @@ const CustomStatusBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
-    top: 75,
+    marginTop: 60,
     width: Dimensions.get("window").width - 80,
     flexDirection: "row",
     justifyContent: "space-between",
