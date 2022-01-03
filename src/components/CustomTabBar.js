@@ -1,7 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { ifIphoneX } from "react-native-iphone-x-helper";
-
+import Logo from "../assets/icons/Logo";
 function MyTabBar({ state, descriptors, navigation }) {
   return (
     <View
@@ -60,18 +60,27 @@ function MyTabBar({ state, descriptors, navigation }) {
           >
             {index === 0 ? (
               <Image
-                style={{ marginBottom: 20 }}
+                style={{
+                  marginBottom: 20,
+                  tintColor: isFocused ? "#fff" : "#939A9A",
+                }}
                 source={require(`../../assets/Home.png`)}
               />
             ) : index === 1 ? (
               <Image
-                style={{ marginBottom: 20 }}
-                source={require(`../../assets/Profile.png`)}
+                style={{
+                  marginBottom: 20,
+                  tintColor: isFocused ? "#fff" : "#939A9A",
+                }}
+                source={require(`../../assets/Sound.png`)}
               />
             ) : index === 2 ? (
               <Image
-                style={{ marginBottom: 20 }}
-                source={require(`../../assets/Sounds.png`)}
+                style={{
+                  marginBottom: 20,
+                  tintColor: isFocused ? "#fff" : "#939A9A",
+                }}
+                source={require(`../../assets/User.png`)}
               />
             ) : (
               <></>
