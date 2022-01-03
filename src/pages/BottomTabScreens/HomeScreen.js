@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View, StyleSheet, Dimensions } from "react-native";
-import CustomStatusBar from "../components/CustomStatusBar";
-import CategoryCard from "../components/CategoryCard";
-import VideoCard from "../components/VideoCard";
+import CustomStatusBar from "../../components/CustomStatusBar";
+import CategoryCard from "../../components/CategoryCard";
+import VideoCard from "../../components/VideoCard";
 
 function HomeScreen() {
   const categories = ["Calm", "Relax", "Focus", "Anxious"];
