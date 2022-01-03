@@ -1,8 +1,7 @@
 import React from "react";
-import { Text, View } from "react-native";
-import CustomStatusBar from "./CustomStatusBar";
+import { View, Text } from "react-native";
 
-function HomeScreen() {
+function SoundsScreen() {
   return (
     <View
       style={{
@@ -12,10 +11,9 @@ function HomeScreen() {
         backgroundColor: "#253334",
       }}
     >
-      <CustomStatusBar />
-      <Text>Home!</Text>
+      <Text>Sounds!</Text>
     </View>
   );
 }
 
-export default HomeScreen;
+export default SoundsScreen;
