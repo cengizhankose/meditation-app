@@ -24,6 +24,9 @@ const VideoCard = ({ title, subtitle, index }) => {
 };
 
 const styles = StyleSheet.create({
+  videCardTextContainer: {
+    width: 190,
+  },
   videoContainer: {
     marginTop: 40,
     width: Dimensions.get("window").width - 35,
@@ -34,6 +37,7 @@ const styles = StyleSheet.create({
   videoRowContainer: {
     flexDirection: "row",
     padding: 20,
+    marginLeft: 5,
   },
   headerTitle: {
     fontFamily: "Alegreya_500Medium",
@@ -44,7 +48,6 @@ const styles = StyleSheet.create({
     color: "#253334",
   },
   subtitleText: {
-    maxWidth: 165,
     fontFamily: "Alegreya_500Medium",
     fontWeight: "500",
     fontStyle: "normal",

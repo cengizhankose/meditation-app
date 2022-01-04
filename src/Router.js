@@ -17,11 +17,15 @@ import HomeScreen from "./pages/BottomTabScreens/HomeScreen";
 
 //Components
 import MyTabBar from "./components/CustomTabBar";
+import MeditationScreen from "./pages/Screens/MeditationScreen";
+import CustomStatusBar from "./components/CustomStatusBar";
+import ToolsScreen from "./pages/Screens/ToolsScreen";
 
 //Navigators
 const BottomTab = createBottomTabNavigator();
 const AuthStack = createNativeStackNavigator();
 const AppStack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
 
 const Router = (props) => {
   const navigation = useNavigationContainerRef();
@@ -36,13 +40,26 @@ const Router = (props) => {
     );
   };
 
+  const HomeStackScreens = (params) => {
+    return (
+      <HomeStack.Navigator
+        screenOptions={{ headerShown: false }}
+        initalRouteName="HomeScreen"
+      >
+        <HomeStack.Screen name="HomeScreen" component={HomeScreen} />
+        <HomeStack.Screen name="Meditation" component={MeditationScreen} />
+        <HomeStack.Screen name="Tools" component={ToolsScreen} />
+      </HomeStack.Navigator>
+    );
+  };
+
   const BottomTabScreens = (params) => {
     return (
       <BottomTab.Navigator
         screenOptions={{ headerShown: false }}
         tabBar={(props) => <MyTabBar {...props} />}
       >
-        <BottomTab.Screen name="Home" component={HomeScreen} />
+        <BottomTab.Screen name="Home" component={HomeStackScreens} />
         <BottomTab.Screen name="Sounds" component={SoundsScreen} />
         <BottomTab.Screen name="Profile" component={ProfileScreen} />
       </BottomTab.Navigator>

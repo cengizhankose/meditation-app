@@ -1,5 +1,12 @@
 import React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { ifIphoneX } from "react-native-iphone-x-helper";
 import Logo from "../assets/icons/Logo";
 function MyTabBar({ state, descriptors, navigation }) {
