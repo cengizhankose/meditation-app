@@ -14,6 +14,7 @@ import SignUpScreen from "./pages/Auth/SignUp";
 import ProfileScreen from "./pages/BottomTabScreens/ProfileScreen";
 import SoundsScreen from "./pages/BottomTabScreens/SoundsScreen";
 import HomeScreen from "./pages/BottomTabScreens/HomeScreen";
+import NowPlayingScreen from "./pages/NowPlayingScreen";
 
 //Components
 import MyTabBar from "./components/CustomTabBar";
@@ -22,6 +23,7 @@ import MyTabBar from "./components/CustomTabBar";
 const BottomTab = createBottomTabNavigator();
 const AuthStack = createNativeStackNavigator();
 const AppStack = createNativeStackNavigator();
+const SoundStack = createNativeStackNavigator();
 
 const Router = (props) => {
   const navigation = useNavigationContainerRef();
@@ -43,14 +45,25 @@ const Router = (props) => {
         tabBar={(props) => <MyTabBar {...props} />}
       >
         <BottomTab.Screen name="Home" component={HomeScreen} />
-        <BottomTab.Screen name="Sounds" component={SoundsScreen} />
+        <BottomTab.Screen name="Sounds" component={SoundStackScreens} />
         <BottomTab.Screen name="Profile" component={ProfileScreen} />
       </BottomTab.Navigator>
     );
   };
 
+  const SoundStackScreens = (params) => {
+    return (
+      <SoundStack.Navigator
+        screenOptions={{ headerShown: false }}
+        initialRouteName="SoundsMain"
+      >
+        <SoundStack.Screen name="SoundsMain" component={SoundsScreen} />
+        <SoundStack.Screen name="NowPlaying" component={NowPlayingScreen} />
+      </SoundStack.Navigator>
+    );
+  };
   return (
-    <NavigationContainer ref={navigation}>
+    <NavigationContainer ref={navigation} initialRouteName="Auth">
       <AppStack.Navigator screenOptions={{ headerShown: false }}>
         <AppStack.Screen name="Auth" component={AuthStackScreens} />
         <AppStack.Screen name="BottomTabScreens" component={BottomTabScreens} />
